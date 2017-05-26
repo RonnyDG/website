@@ -1,0 +1,5 @@
+NOTES:
+
+19April2017:
+-----------
+Site is using css from <trimsite> rather than <config>.

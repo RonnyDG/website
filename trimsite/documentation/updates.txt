@@ -1,0 +1,201 @@
+******************************************************************************************
+* Filename:	  updates.txt
+* Author:     David Argles (daargles@gmail.com)
+* Time/Date:  As below
+* Purpose:    To record updates to site files
+******************************************************************************************
+
+Time: 	 30-12-16, 14:56h
+Coder:	 David
+Notes:
+CSS template fixed-menu4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 30-12-16, 13:03h
+Coder:	 David
+Notes:
+CSS template blank4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 30-12-16, 12:02h
+Coder:	 David
+Notes:
+CSS template personal4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 27-12-16, 15:35h
+Coder:	 David
+Notes:
+CSS template left-menu4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 27-12-16, 11:19h
+Coder:	 David
+Notes:
+Made a start on updating the CSS templates to allow for nested sub-menus.  So far, have 
+sorted:
+- ecs-module-4.css
+- trimsite4.css
+- back-pic4.css
+
+--- end of update ---
+
+Time: 	 19-12-16, 15:39h
+Coder:	 David
+Notes:
+
+Major update to version 4.0:
+This is not a big change in terms of lines of code, but huge in terms of concept.  The 
+menu is now built by a separate *recursive* method in the webpage class.  This means it 
+can handle sub-menus, sub-sub-menus and sub menus nested to any depth you like 
+(apparently it might break if one were to try to recurse to a depth of 99 or 100, 
+though...).
+
+Implications:
+1) The basic TrimSite package should now handle:
+   - pages being put in sub-directories, and 
+   - sub/sub-sub menu structures
+   without any changes to the TrimSite code.
+2) TrimSitePlus is now redundant.
+3) The example CSS files will need updating to display nested sub-menus.
+
+It will all also need proper testing ;-)
+
+--- end of update ---
+
+Time: 	 17-12-16, 15:19h
+Coder:	 David
+Notes:
+* Small update to back-pic.css to fix the background picture.
+
+--- end of update ---
+
+Time: 	 16-12-16, 16:33h
+Coder:	 David
+Notes:
+Updated for version 3.5:
+* The path parameter is now completely removed, so TrimSite works out the various bits of 
+  path info for itself (page name, path to page, path from page to the <trimsite> 
+  directory, path from website rrot to the <trimsite> directory, etc).
+* The render method is now altered so that it doesn't work out the menu -every- time it's 
+  called!
+* It's also possible to set {{content}} and call render just once to render the whole page.
+
+--- end of update ---
+
+Time: 	 14-12-16, 20:14h
+Coder:	 David
+Version: 3.41
+Notes:   Made the path parameter optional, so default is "" (i.e. page is in root 
+         directory).
+
+--- end of update ---
+
+Time: 	12-12-16, 00:02h
+Coder:	David
+Notes:
+Updated for trimsite 3.4:
+* Main change is the introduction of "path" when webpage class is instantiated.  Although 
+  this makes TrimSite just a tad more complicated, going against the KISS mantra, it 
+  allows more flexibility when adding in extras.  Hopefully it will make for a smooth 
+  transition to TrimSitePlus.  Maybe...
+* Updated the documentation to reflect the changes; and 
+* One or two other small changes made.
+
+--- end of update ---
+
+Time: 	11-09-15, 22:40h
+Coder:	David
+Notes:
+a tidy-up for trimsite3:
+* Mainly updated the documentation to reflect the changes; and 
+* One or two small changes elsewhere that I'd missed.
+
+--- end of update ---
+
+Time: 	11-09-15, 16:09h
+Coder:	David
+Notes:
+Major update from trimsite2 to trimsite3:
+* Renamed <library> to become <trimsite>, and altered all references to this directory to 
+  match.
+* Renamed webpage.php to webpage.class.php (as it's a class definition file), and altered 
+  all references to it to match.
+* Joined templateTop.html and templateBottom.html to create a single template.html, and 
+  altered the webpage render method appropriately.
+* Extracted the menu html form the webpage render method to create two partials, menu.php 
+  and menuCurrent.php and altered the webpage render method appropriately.
+
+--- end of update ---
+
+Time: 	14-02-15, 09:46h
+Coder:	David
+Notes:
+* Made 3 minor changes to partials.php to make it backwards compatible with older versions 
+  of PHP; two places where it now uses array() instead of [], and one place where there is 
+  an unnecessary use of the new third parameter in strstr().
+
+--- end of update ---
+
+Time: 	06-01-15, 14:15h
+Coder:	David
+Notes:
+* side-menu.css and fixed-menu.css now sorted.  They exhibit "graceful degradation" in IE; 
+  IE9,10 & 11 work pretty well.  Then IE8 down through to IE5 get progressively worse, 
+  although there is still a reasonable and working display even in IE5.
+
+--- end of update ---
+
+Time: 	04-01-15, 23:42h
+Coder:	David
+Notes:
+* I've now reworked back-pic.css so it's properly cross-browser compatible, including 
+  IE5.  I've also removed redundant multiple declarations.  There is a very slight glitch 
+  remaining in IE11, but life is too short...
+
+Note: side-menu.css and fixed-menu.css still need cleaning up and making IE5 compatible.
+
+--- end of update ---
+
+Time: 	04-01-15, 16:28h
+Coder:	David
+Notes:
+* Using <banner> may work, but it fails to validate in the W3 Validator.  So I've:
+  - changed from <banner> to <figure>,  
+  - put <figure> inside <header>, and
+  - updated trimsite2.css to reflect this.
+  Putting <figure> inside <header> means it can be specified as "header figure" in the 
+  CSS, so it's not necessary to declare a specific class of figure for the banner.
+  ...But I'd really rather have <banner> - it's then clear what we're doing... :-(
+
+--- end of update ---
+
+Time: 	24-12-14, 14:17h
+Coder:	David
+Notes:
+* Upgraded to Trimsite2
+* Sorted out the initial documentation
+
+--- end of update ---
+
+Time: 	15-12-13, 01:20h
+Coder:	David
+Notes:
+* Sorted out the initial documentation
+* Also have got my head around using Aptana for updating files, and
+* Git for committing changes.
+
+--- end of update ---
+
+Time: 	12-12-13, 23:35h
+Coder:	David
+Notes:
+* Site taken live on www.freehosting.com.  Tried hosting on www.host-ed.me, but it wouldn't allow php ini files :'(
+
+--- end of update ---
+
+--- end of update notes ---
