@@ -1,0 +1,92 @@
+*********************************************************************************
+* Filename:     howto-rescue.txt                                                *
+* Version:      08.04.2017, 18:26hr                                             *
+* Author:       David Argles, daargles@gmail.com                                *
+* Description:  This file gives explains how to rescue lost pages from the      *
+*                Wayback Machine                                                *
+*********************************************************************************
+
+This file makes the assumption that you need to rescue lost web content from the 
+Internet Archive, or the "Wayback Machine".  It depends on the archive having 
+taken a copy of your web pages in the first place; if it hasn't, you're in 
+trouble!
+
+In the following notes, I'm going to rescue the "History of the Minisail" page 
+from/to minisail.org.uk.
+
+ 1) Find your site backup:
+    ----------------------
+    In your web browser, navigate to the Wayback Machine:
+      https://archive.org/web/
+    Then search for your site.  In this case, I'm searching for 
+      "minisail.org.uk"
+    As of April 8th 2017, the site has been backed up 45 times between 2001 and 
+    2016.  I'm going to choose the latest backup made on 2nd October 2016.
+    
+ 2) Navigate to the page you want:
+    ------------------------------
+    The Wayback Machine displays a copy of the website as it was, complete with 
+    menu.  So use the menu to navigate to the page you actually want.  In this 
+    case, I want the main "History" page.  Don't worry about the URL - as the 
+    original was WordPress, it carries a "?page_id=11" tag at the end...
+
+ 3) Get the source code:
+    --------------------
+    Now right-click the displayed web page and select "view source".  There's 
+    loads of code for the Wayback Machine, then a whole load more for WordPress.  
+    But if you're careful, you should be able to scroll down and see a section 
+    that makes sense, headed by a line that says:
+      <div class="entry-content">
+    Copy everything following this line as far as the line that says:
+      </div><!-- .entry-content -->
+    You'll need to put it somewhere - I've put it into a temporary text file 
+    called "untitled.txt".  Hmm, that was imaginative...
+ 
+ 4) Create a new webpage:
+    ---------------------
+    If you're reading this, you're presumably already logged in to the website 
+    and able to create and edit pages.  So make a copy of an existing page (a 
+    simple one like contact.php would be good), and give it a suitable new name.  
+    In this case, I'll name it history.php
+     
+ 5) Edit the page content:
+    ----------------------
+    Now put all the content you've just rescued into your new "history.php".  
+    It needs to go in between the line that says:
+      <!-- The main page content follows.  You can change this as you wish -->
+    and the line that says:
+      <!-- End of main page content -->
+
+ 6) View the page and tidy it up:
+    -----------------------------
+    Now navigate in your browser to your website (in this case, 
+    minisail.org.uk).  See what the page looks like.  You won't have a menu 
+    entry yet, so you'll have to type in the page name manually, i.e.:
+      http://minisail.org.uk/history.php
+    In this particular example, the only real problem is that the page heading 
+    is in <h1>, and page template is designed to look better with titles in 
+    <h3>.  So in this step, I've changed the <h1></h1> tags to <h3></h3>. 
+    
+ 7) Add the new page to the menu:
+    -----------------------------
+    It's not much use having a page rescued if no one knows it's there!  So 
+    let's add it to the menu.  To do this:
+    - navigate into the [trimsite] directory
+    - edit webpage.ini
+    - at the end of the file, you'll find a section that is headed:
+      [menu]
+    - add a line that says something like:
+      History = history.php
+      (History is the label that will come up in the menu, and history.php is 
+      the page that it will go to).
+    - Save the modified webpage.ini
+    
+And that's it!  Maybe it would be good to have a final check in the browser to 
+make sure everything is as intended.
+
+If you have a go at this and it all gets messed up, don't worry.  We can fix 
+it!  Just let me know.  I'll make sure I'm keeping regular back-ups.
+
+-------------------
+--- End of file ---
+-------------------

@@ -22,9 +22,8 @@
 ?>
         <!-- The main page content follows.  You can change this as you wish -->
       
-        <p><i>[Please note: our webserver has gone down!  We're working to get things up again as quickly as possible.  In the meantime, if you have any questions, the best way to keep in touch is via our <a href="https://www.facebook.com/groups/minisail/">Facebook group</a>.]</i></p>
+        <!-- p><i>[Please note: our webserver has gone down!  We're working to get things up again as quickly as possible.  In the meantime, if you have any questions, the best way to keep in touch is via our <a href="https://www.facebook.com/groups/minisail/">Facebook group</a>.]</i></p -->
 
-<!-- This is a meaningless comment -->
     <h3>The Minisail Class Association</h3>
 
 		<p>Welcome to the MiniSail Class Association website!</p>
